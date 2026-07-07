@@ -1,10 +1,382 @@
 <!DOCTYPE html>
-<html>
+<html lang="zh-TW">
 <head>
-    <title>我的第一個 GitHub 網頁</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RockBand Flex 多環阻力帶線上課程 | OWNLIFE</title>
+    <style>
+        :root {
+            --primary: #d32f2f; /* 專業運動紅 */
+            --dark: #1a1a1a;
+            --light-bg: #f8f9fa;
+            --text-main: #333333;
+            --text-muted: #666666;
+        }
+
+        * {
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+            line-height: 1.8;
+            color: var(--text-main);
+            margin: 0;
+            padding: 0;
+            background-color: var(--light-bg);
+        }
+
+        /* 英雄首圖區塊 (Hero Section) */
+        header {
+            background: linear-gradient(135deg, #111 0%, #2b2b2b 100%);
+            color: white;
+            padding: 80px 20px;
+            text-align: center;
+            border-bottom: 5px solid var(--primary);
+        }
+
+        header h1 {
+            font-size: 2.5rem;
+            margin: 0 0 15px 0;
+            letter-spacing: 1px;
+        }
+
+        header h2 {
+            font-size: 1.3rem;
+            color: #ddd;
+            font-weight: 400;
+            margin: 0;
+        }
+
+        .container {
+            max-width: 900px;
+            margin: 0 auto;
+            padding: 40px 20px;
+        }
+
+        /* 內容區塊共用設定 */
+        section {
+            background: white;
+            padding: 40px;
+            border-radius: 12px;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.03);
+            margin-bottom: 40px;
+        }
+
+        h3 {
+            color: var(--dark);
+            font-size: 1.6rem;
+            margin-top: 0;
+            margin-bottom: 25px;
+            border-left: 5px solid var(--primary);
+            padding-left: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            font-size: 1.05rem;
+        }
+
+        .highlight-text {
+            font-size: 1.2rem;
+            font-weight: bold;
+            color: var(--primary);
+            text-align: center;
+            margin: 30px 0;
+        }
+
+        /* 痛點區塊 */
+        .pain-points {
+            background-color: #fff3f3;
+            border-radius: 8px;
+            padding: 20px;
+            margin: 20px 0;
+            border: 1px solid #ffcdd2;
+        }
+        
+        .pain-points p {
+            margin: 5px 0;
+            font-weight: bold;
+            color: var(--dark);
+        }
+
+        /* 課程特色 (兩欄網格) */
+        .features-grid {
+            display: grid;
+            grid-template-columns: 1fr;
+            gap: 25px;
+            margin-top: 25px;
+        }
+
+        @media(min-width: 768px) {
+            .features-grid {
+                grid-template-columns: 1fr 1fr;
+            }
+        }
+
+        .feature-card {
+            background: var(--light-bg);
+            padding: 25px;
+            border-radius: 8px;
+            border-top: 4px solid var(--dark);
+        }
+
+        .feature-card h4 {
+            margin: 0 0 10px 0;
+            font-size: 1.1rem;
+            color: var(--dark);
+        }
+
+        .feature-card p {
+            font-size: 0.95rem;
+            margin: 0;
+            color: var(--text-muted);
+        }
+
+        /* 七大章節區塊 */
+        .chapter-list {
+            display: flex;
+            flex-direction: column;
+            gap: 20px;
+        }
+
+        .chapter-item {
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            overflow: hidden;
+        }
+
+        .chapter-header {
+            background-color: var(--dark);
+            color: white;
+            padding: 15px 20px;
+            font-weight: bold;
+            font-size: 1.1rem;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .chapter-subtitle {
+            background-color: #f1f1f1;
+            padding: 10px 20px;
+            font-weight: bold;
+            color: var(--primary);
+            font-size: 0.95rem;
+            border-bottom: 1px solid #e0e0e0;
+        }
+
+        .chapter-body {
+            padding: 20px;
+        }
+        
+        .chapter-body p {
+            font-size: 0.95rem;
+            margin: 0 0 10px 0;
+        }
+
+        .warning-text {
+            font-size: 0.85rem;
+            color: #d32f2f;
+            background: #ffebee;
+            padding: 10px;
+            border-radius: 4px;
+            margin-top: 15px;
+        }
+
+        /* 行動呼籲按鈕 */
+        .cta-container {
+            text-align: center;
+            margin-top: 50px;
+            margin-bottom: 20px;
+        }
+
+        .cta-btn {
+            display: inline-block;
+            background-color: var(--primary);
+            color: white;
+            text-decoration: none;
+            padding: 18px 40px;
+            font-size: 1.3rem;
+            font-weight: bold;
+            border-radius: 50px;
+            transition: 0.3s;
+            box-shadow: 0 5px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        .cta-btn:hover {
+            background-color: #b71c1c;
+            transform: translateY(-2px);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px;
+            background-color: #111;
+            color: #777;
+            font-size: 0.85rem;
+        }
+    </style>
 </head>
 <body>
-    <h1>哈囉，世界！</h1>
-    <p>這是我在 GitHub 上的新網頁專案。</p>
+
+    <header>
+        <h1>RockBand Flex 多環阻力帶線上課程</h1>
+        <h2>一條阻力帶，學會 7 種族群與運動情境應用</h2>
+    </header>
+
+    <div class="container">
+        
+        <section>
+            <p><strong>你是不是也買過彈力帶，卻不知道怎麼用？</strong></p>
+            <p>放在家裡、健身房、包包裡，最後只會做幾個簡單拉伸動作。但其實，一條好的阻力帶，不只是拿來「拉一拉」而已。</p>
+            <p>RockBand Flex 多環阻力帶搭配完整線上課程，帶你從基礎使用、身體啟動、活動度訓練，到不同運動族群與日常情境的應用，真正學會如何把阻力帶用在跑步、騎車、游泳、孕婦訓練、樂齡保健與上班族日常放鬆中。</p>
+            
+            <div class="highlight-text">
+                這不是一堂單純的工具教學，<br>
+                而是一套可以長期使用、反覆觀看、跟著練習的身體訓練系統。
+            </div>
+        </section>
+
+        <section>
+            <h3>為什麼你需要這堂課？</h3>
+            <p>很多人買了阻力帶，卻遇到三個問題：</p>
+            <div class="pain-points">
+                <p>第一，不知道該怎麼開始。</p>
+                <p>第二，不知道不同阻力該怎麼選。</p>
+                <p>第三，不知道自己的身體狀況適合做哪些動作。</p>
+            </div>
+            <p>結果阻力帶變成「看起來很實用，但實際上很少用」的工具。<br>
+            <strong>RockBand Flex 多環阻力帶線上課程，幫你把這些問題一次解決。</strong></p>
+            <p>透過七大主題課程，你可以依照自己的運動習慣、生活型態與身體需求，選擇適合自己的單元練習。不管你是跑者、騎車族、游泳愛好者、孕期女性、銀髮長者，或長時間久坐的上班族，都能找到適合自己的應用方式。</p>
+        </section>
+
+        <section>
+            <h3>RockBand Flex 不只是彈力帶，而是更好上手的多環訓練工具</h3>
+            <p>一般彈力帶常見的問題是：不好抓、長度不好調、阻力不好控制、動作容易代償。</p>
+            <p><strong>RockBand Flex 採用多環設計</strong>，讓雙手、雙腳可以快速找到固定位置，不需要打結，也不需要一直調整長度。</p>
+            <p>不同環位可以對應不同身高、不同動作角度與不同訓練強度，讓阻力帶的應用更穩定，也更容易進入正確動作。</p>
+            <p>無論是跑前啟動、肩膀活動、核心穩定、臀腿訓練，或是日常居家伸展，一條 RockBand Flex 都能依照你的需求變化使用。</p>
+        </section>
+
+        <section>
+            <h3>課程特色</h3>
+            <div class="features-grid">
+                <div class="feature-card">
+                    <h4>1. 七大主題，對應真實使用情境</h4>
+                    <p>這堂課不是零散的動作示範，而是依照不同族群與運動需求設計。從跑步、自行車、游泳，到孕婦、樂齡與上班族，讓你不只是學會「動作」，更知道什麼情境下該怎麼用。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>2. 搭配三種阻力，從入門到進階都能練</h4>
+                    <p>本方案包含三種阻力 RockBand Flex 各一條。較低阻力適合啟動與恢復；中等阻力適合日常肌力控制；較高阻力適合進階肌力強化。讓同一套課程可以依照能力逐步進階。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>3. YouTube 線上觀看，永久不限次複習</h4>
+                    <p>購買後提供 YouTube 課程觀看權限。一組課程對應一個帳號，可永久不限次觀看。忘記動作時隨時回去複習，這是一套可以長期陪你訓練的工具庫。</p>
+                </div>
+                <div class="feature-card">
+                    <h4>4. 由 ROCKTAPE 專業講師設計與示範</h4>
+                    <p>課程邀請 ROCKTAPE 講師李崇華，設計完整的多環阻力帶應用內容。不只教你「怎麼做」，也會帶你理解每個動作適合用在哪裡，真正帶回生活與專業現場。</p>
+                </div>
+            </div>
+        </section>
+
+        <section>
+            <h3>七大主題課程內容</h3>
+            
+            <div class="chapter-list">
+                <!-- 第一章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第一章｜跑步篇</div>
+                    <div class="chapter-subtitle">跑前啟動、臀腿控制、膝蓋穩定</div>
+                    <div class="chapter-body">
+                        <p>跑步不只是雙腳往前跑，更需要穩定的髖關節、臀部啟動與下肢控制。</p>
+                        <p>跑步篇會帶你學習如何使用 RockBand Flex 進行跑前熱身、臀腿啟動、髖膝控制與下肢穩定訓練。</p>
+                        <p><strong>適合：</strong>跑者在訓練前啟動身體，也適合平常容易膝蓋不穩、臀部無力、跑步姿勢容易跑掉的人使用。</p>
+                    </div>
+                </div>
+
+                <!-- 第二章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第二章｜自行車篇</div>
+                    <div class="chapter-subtitle">騎乘姿勢、核心穩定、髖膝控制</div>
+                    <div class="chapter-body">
+                        <p>長時間騎車常常會讓髖關節、下背、肩頸與膝蓋承受壓力。</p>
+                        <p>自行車篇針對騎乘族群常見需求，設計出適合騎車前後使用的阻力帶訓練，幫助建立核心穩定、髖膝控制與下肢力量連結。</p>
+                        <p><strong>適合：</strong>公路車、登山車、飛輪訓練與長時間騎乘族群。</p>
+                    </div>
+                </div>
+
+                <!-- 第三章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第三章｜游泳篇</div>
+                    <div class="chapter-subtitle">肩關節活動、肩胛穩定、上肢控制</div>
+                    <div class="chapter-body">
+                        <p>游泳需要大量肩關節活動與上肢控制，如果肩胛穩定不足，很容易造成肩膀緊繃、卡卡或使用過度。</p>
+                        <p>游泳篇會帶你用 RockBand Flex 建立肩關節活動度、肩胛控制與核心連結，幫助游泳族群在下水前做好準備，也能作為日常肩部訓練工具。</p>
+                        <p><strong>適合：</strong>游泳愛好者、鐵人三項選手，以及肩膀容易緊繃的人。</p>
+                    </div>
+                </div>
+
+                <!-- 第四章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第四章｜與 ROCKPODS 的應用</div>
+                    <div class="chapter-subtitle">放鬆後再啟動，建立更完整的身體應用邏輯</div>
+                    <div class="chapter-body">
+                        <p>很多人放鬆完身體，卻沒有進一步建立動作控制，結果身體很快又回到原本緊繃的模式。</p>
+                        <p>這一章結合 RockPods 軟拔罐與 RockBand Flex 多環阻力帶，帶你理解如何從筋膜放鬆、組織滑動，到動作啟動與控制訓練。</p>
+                        <p><strong>適合：</strong>不是只追求「放鬆感」，而是讓身體在放鬆之後，重新學會更好的動作模式。</p>
+                    </div>
+                </div>
+
+                <!-- 第五章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第五章｜孕婦篇</div>
+                    <div class="chapter-subtitle">溫和、安全、可調整的孕期活動方式</div>
+                    <div class="chapter-body">
+                        <p>孕期身體會出現姿勢、骨盆、下背與髖部的變化，適度活動有助於維持身體舒適與日常活動能力。</p>
+                        <p>孕婦篇設計溫和、低門檻、可調整的阻力帶動作，協助孕期女性進行適合的活動度與肌力控制練習。</p>
+                        <p><strong>適合：</strong>想在孕期維持活動習慣，但不知道如何安全開始的族群。</p>
+                        <div class="warning-text">
+                            <strong>提醒：</strong>孕期訓練請依照自身狀況調整，若有特殊妊娠風險或不適，請先諮詢醫師或專業人員。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 第六章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第六章｜樂齡篇</div>
+                    <div class="chapter-subtitle">日常活動力、平衡控制、下肢力量</div>
+                    <div class="chapter-body">
+                        <p>樂齡訓練的重點不一定是高強度，而是能不能安全、穩定、持續地維持日常活動能力。</p>
+                        <p>樂齡篇透過簡單好上手的阻力帶動作，協助訓練下肢力量、關節活動度、平衡感與身體控制。</p>
+                        <p><strong>適合：</strong>長者、銀髮族、活動量較低者，或想幫家人建立居家運動習慣的人。</p>
+                    </div>
+                </div>
+
+                <!-- 第七章 -->
+                <div class="chapter-item">
+                    <div class="chapter-header">第七章｜上班族篇</div>
+                    <div class="chapter-subtitle">久坐、肩頸緊繃、駝背與腰痠的日常對策</div>
+                    <div class="chapter-body">
+                        <p>長時間坐辦公室、低頭滑手機、使用電腦，容易讓肩頸、胸椎、下背與髖部變得僵硬。</p>
+                        <p>上班族篇設計適合居家與辦公室使用的阻力帶動作，幫助改善久坐後的緊繃感，重新啟動肩胛、核心、髖部與背部肌群。</p>
+                        <p><strong>適合：</strong>長時間久坐、肩頸緊繃、腰痠、活動量不足的族群。</p>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 行動呼籲 (連結已更新為專屬賣場，並加上 target="_blank" 讓點擊後另開新分頁) -->
+        <div class="cta-container">
+            <a href="https://www.rocktape.com.tw/SalePage/Index/11657980" target="_blank" class="cta-btn">立即購買實體方案並解鎖課程</a>
+        </div>
+
+    </div>
+
+    <footer>
+        <p>&copy; 2026 咏友行销股份有限公司 OWNLIFE MARKETING CO., LTD. All Rights Reserved.</p>
+    </footer>
+
 </body>
 </html>
