@@ -11,7 +11,7 @@
             --light-bg: #f8f9fa;
             --text-main: #333333;
             --text-muted: #666666;
-            --accent: #ffeb3b; /* 優惠價強調色 */
+            --accent: #ffeb3b;
         }
 
         * {
@@ -223,6 +223,58 @@
             margin-top: 15px;
         }
 
+        /* QA 區塊專屬樣式 */
+        .faq-item {
+            background-color: #fff;
+            border: 1px solid #e0e0e0;
+            border-radius: 8px;
+            margin-bottom: 15px;
+            overflow: hidden;
+        }
+
+        .faq-item summary {
+            padding: 18px 20px;
+            font-weight: bold;
+            font-size: 1.05rem;
+            color: var(--dark);
+            cursor: pointer;
+            list-style: none;
+            background-color: var(--light-bg);
+            position: relative;
+            transition: background-color 0.2s;
+        }
+
+        .faq-item summary:hover {
+            background-color: #f0f0f0;
+        }
+
+        .faq-item summary::-webkit-details-marker {
+            display: none; /* 隱藏預設的黑色小三角形 */
+        }
+
+        .faq-item summary::after {
+            content: "+";
+            position: absolute;
+            right: 20px;
+            top: 50%;
+            transform: translateY(-50%);
+            font-size: 1.5rem;
+            font-weight: 300;
+            color: var(--primary);
+        }
+
+        .faq-item[open] summary::after {
+            content: "−";
+        }
+
+        .faq-item p {
+            padding: 15px 20px;
+            margin: 0;
+            color: var(--text-muted);
+            background-color: #fff;
+            border-top: 1px solid #e0e0e0;
+        }
+
         .cta-container {
             text-align: center;
             margin-top: 20px;
@@ -260,7 +312,6 @@
 </head>
 <body>
 
-    <!-- 更新後的首屏橫幅 -->
     <header>
         <h1>RockBand Flex 多環阻力帶線上課程組</h1>
         <h2>一組阻力帶，解鎖 70 堂居家訓練課</h2>
@@ -437,10 +488,57 @@
             <img src="36_0.jpg" alt="RockBand Flex 模擬器械皮拉提斯動作" class="content-image" style="margin-bottom: 0;">
         </section>
 
+        <!-- 【新增 QA 區塊】常見問題 -->
+        <section>
+            <h3>常見問題 Q&A</h3>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：我是運動新手，可以上這堂課嗎？</summary>
+                    <p>可以。課程依照不同族群與情境設計，可以從低阻力、低強度動作開始練習。</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：課程可以看多久？</summary>
+                    <p>購買後提供 YouTube 觀看權限，可永久不限次觀看。</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：一組可以幾個人觀看？</summary>
+                    <p>一組課程對應一個帳號觀看。</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：我已經有一般彈力帶，還需要 RockBand Flex 嗎？</summary>
+                    <p>RockBand Flex 的多環設計更容易固定手腳位置，不需要打結，也更方便調整長度與阻力角度，對初學者與教學者都更好上手。</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：孕婦可以使用嗎？</summary>
+                    <p>課程中有孕婦篇，設計以溫和、可調整的活動為主。若有特殊妊娠狀況或不適，建議先諮詢醫師或專業人員。</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：樂齡族適合嗎？</summary>
+                    <p>適合。樂齡篇以簡單、低門檻、可持續的居家訓練為主，適合維持日常活動力、平衡與下肢力量。</p>
+                </details>
+            </div>
+            <div class="faq-item">
+                <details>
+                    <summary>Q：購買後怎麼開通課程？</summary>
+                    <p>完成購買後，將依照訂單資訊提供 YouTube 課程觀看權限。</p>
+                </details>
+            </div>
+        </section>
+
         <!-- 價格與總結圖 -->
         <img src="price-summary.jpg" alt="課程價格與章節總覽" class="content-image" style="margin-bottom: 30px;">
 
-        <!-- 結帳按鈕 (同視窗開啟) -->
+        <!-- 結帳按鈕 -->
         <div class="cta-container">
             <a href="https://www.rocktape.com.tw/SalePage/Index/11657980" class="cta-btn">立即購買實體方案並解鎖課程</a>
         </div>
@@ -448,7 +546,7 @@
     </div>
 
     <footer>
-        <p>&copy; 2026 詠友行銷股份有限公司 OWNLIFE MARKETING CO., LTD. All Rights Reserved.</p>
+        <p>&copy; 2026 咏友行销股份有限公司 OWNLIFE MARKETING CO., LTD. All Rights Reserved.</p>
     </footer>
 
 </body>
