@@ -249,7 +249,7 @@
         }
 
         .faq-item summary::-webkit-details-marker {
-            display: none; /* 隱藏預設的黑色小三角形 */
+            display: none;
         }
 
         .faq-item summary::after {
@@ -275,6 +275,26 @@
             border-top: 1px solid #e0e0e0;
         }
 
+        /* 聯絡資訊區塊樣式 */
+        .contact-info {
+            text-align: center;
+        }
+        .contact-info p {
+            font-size: 1.1rem;
+            margin-bottom: 10px;
+            color: var(--dark);
+        }
+        .contact-info a {
+            color: var(--primary);
+            font-weight: bold;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .contact-info a:hover {
+            text-decoration: underline;
+        }
+
+        /* 結帳按鈕樣式 */
         .cta-container {
             text-align: center;
             margin-top: 20px;
@@ -301,9 +321,54 @@
             transform: translateY(-2px);
         }
 
+        /* 懸浮按鈕樣式 */
+        .floating-buttons {
+            position: fixed;
+            bottom: 30px;
+            right: 20px;
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            z-index: 9999;
+        }
+        .float-btn {
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding: 12px 20px;
+            border-radius: 30px;
+            color: white;
+            text-decoration: none;
+            font-weight: bold;
+            font-size: 1rem;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            transition: transform 0.2s, box-shadow 0.2s;
+        }
+        .float-btn:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 6px 15px rgba(0,0,0,0.3);
+        }
+        .float-ig {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+        }
+        .float-line {
+            background-color: #00B900;
+        }
+        @media(max-width: 768px) {
+            .floating-buttons {
+                bottom: 20px;
+                right: 15px;
+                gap: 10px;
+            }
+            .float-btn {
+                padding: 10px 15px;
+                font-size: 0.95rem;
+            }
+        }
+
         footer {
             text-align: center;
-            padding: 30px;
+            padding: 30px 20px 80px 20px; /* 底部增加 padding 避免被懸浮按鈕遮擋 */
             background-color: #111;
             color: #777;
             font-size: 0.85rem;
@@ -370,7 +435,7 @@
             <p>無論是跑前啟動、肩膀活動、核心穩定、臀腿訓練，或是日常居家伸展，一條 RockBand Flex 都能依照你的需求變化使用。</p>
             
             <!-- 彈力帶伸展 -->
-            <img src="34_0.jpg" alt="RockBand Flex 彈力帶伸展" class="content-image">
+            <img src="34_0.png" alt="RockBand Flex 彈力帶伸展" class="content-image">
 
             <!-- 三種阻力選擇 -->
             <img src="26_0.png" alt="三種阻力選擇" class="content-image">
@@ -474,7 +539,7 @@
                         <p><strong>適合：</strong>長時間久坐、肩頸緊繃、腰痠、活動量不足的族群。</p>
                         
                         <!-- 適合上班族的6個動作 -->
-                        <img src="37_0.jpg" alt="RockBand Flex 適合上班族的6個動作" class="content-image" style="margin: 20px 0 0 0; width: 100%; box-shadow: none;">
+                        <img src="37_0.png" alt="RockBand Flex 適合上班族的6個動作" class="content-image" style="margin: 20px 0 0 0; width: 100%; box-shadow: none;">
                     </div>
                 </div>
             </div>
@@ -485,10 +550,10 @@
             <h3>🔥 解鎖更多可能：在家模擬皮拉提斯器械訓練概念</h3>
             <p>RockBand Flex 的多環設計，可以模擬部分 Pilates Reformer 常見的阻力方向與動作控制概念。</p>
             <p>不需要大型器械，也能在家進行核心控制、肩胛穩定、髖部活動與全身線條訓練。</p>
-            <img src="36_0.jpg" alt="RockBand Flex 模擬器械皮拉提斯動作" class="content-image" style="margin-bottom: 0;">
+            <img src="36_0.png" alt="RockBand Flex 模擬器械皮拉提斯動作" class="content-image" style="margin-bottom: 0;">
         </section>
 
-        <!-- 【新增 QA 區塊】常見問題 -->
+        <!-- 常見問題 Q&A -->
         <section>
             <h3>常見問題 Q&A</h3>
             <div class="faq-item">
@@ -534,6 +599,16 @@
                 </details>
             </div>
         </section>
+        
+        <!-- 新增：聯絡方式區塊 -->
+        <section class="contact-info">
+            <h3>📞 聯絡方式</h3>
+            <p>📸 IG：<a href="https://www.instagram.com/rocktape.tw" target="_blank">@rocktape.tw</a></p>
+            <!-- 提示：請將下方 href="#" 替換為您的 Line 官方帳號加入連結 -->
+            <p>💬 Line 官方帳號：<a href="#" target="_blank">點擊加入</a></p>
+            <p>📧 Email：<a href="mailto:rocktape.tw@gmail.com">rocktape.tw@gmail.com</a></p>
+            <p>🌐 官方網站：<a href="https://www.rocktape.com.tw" target="_blank">www.rocktape.com.tw</a></p>
+        </section>
 
         <!-- 價格與總結圖 -->
         <img src="price-summary.jpg" alt="課程價格與章節總覽" class="content-image" style="margin-bottom: 30px;">
@@ -545,8 +620,16 @@
 
     </div>
 
+    <!-- 懸浮按鈕：常駐於畫面右下角 -->
+    <div class="floating-buttons">
+        <a href="https://www.instagram.com/rocktape.tw" target="_blank" class="float-btn float-ig">📸 官方 IG</a>
+        <!-- 提示：請將下方 href="#" 替換為您的 Line 官方帳號加入連結 -->
+        <a href="#" target="_blank" class="float-btn float-line">💬 Line 課程諮詢</a>
+    </div>
+
+    <!-- 頁尾宣告 -->
     <footer>
-        <p>&copy; 2026 咏友行销股份有限公司 OWNLIFE MARKETING CO., LTD. All Rights Reserved.</p>
+        <p>&copy; 2026 詠友行銷股份有限公司 OWNLIFE MARKETING CO., LTD. All Rights Reserved.</p>
     </footer>
 
 </body>
