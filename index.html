@@ -408,10 +408,15 @@
             background-color: #00B900;
         }
 
-        /* 立即報名懸浮按鈕專屬樣式 */
+        /* 立即報名懸浮按鈕專屬樣式 (改為高對比的亮眼金黃色) */
         .float-buy {
-            background-color: var(--primary);
-            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+            background-color: #FFC107;
+            color: #1a1a1a !important; /* 深色文字增加辨識度 */
+            box-shadow: 0 4px 15px rgba(255, 193, 7, 0.4);
+        }
+        
+        .float-buy:hover {
+            background-color: #ffb300;
         }
 
         footer {
@@ -762,7 +767,7 @@
     <div class="floating-buttons">
         <a href="https://www.instagram.com/rocktape.tw" target="_blank" class="float-btn float-ig">📸 官方 IG</a>
         <a href="https://line.me/R/ti/p/@ahq9802k?oat_content=url&ts=12041956" target="_blank" class="float-btn float-line">💬 Line 課程諮詢</a>
-        <!-- 新增：立即報名懸浮按鈕 -->
+        <!-- 已更新為金黃色系，與 IG 顏色做明顯區隔 -->
         <a href="https://www.rocktape.com.tw/SalePage/Index/11657980" class="float-btn float-buy">🛒 立即報名</a>
     </div>
 
