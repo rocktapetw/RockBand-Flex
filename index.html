@@ -2,7 +2,7 @@
 <html lang="zh-TW">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
     <title>RockBand Flex 多環阻力帶線上課程組 | OWNLIFE</title>
     <style>
         :root {
@@ -27,6 +27,7 @@
             background-color: var(--light-bg);
         }
 
+        /* ------------------ 電腦版預設排版 ------------------ */
         header {
             background: linear-gradient(135deg, #111 0%, #2b2b2b 100%);
             color: white;
@@ -88,19 +89,20 @@
             padding: 40px 20px;
         }
 
+        /* 圖片自適應設定 */
         .content-image {
             max-width: 100%;
-            height: auto;
+            height: auto; 
             border-radius: 12px;
             box-shadow: 0 4px 15px rgba(0,0,0,0.1);
             margin: 25px auto;
             display: block;
         }
 
-        /* YouTube 影片自適應外框 */
+        /* 影片自適應設定 */
         .video-wrapper {
             position: relative;
-            padding-bottom: 56.25%; /* 16:9 比例 */
+            padding-bottom: 56.25%; 
             height: 0;
             overflow: hidden;
             border-radius: 12px;
@@ -164,15 +166,9 @@
 
         .features-grid {
             display: grid;
-            grid-template-columns: 1fr;
+            grid-template-columns: 1fr 1fr;
             gap: 25px;
             margin-top: 25px;
-        }
-
-        @media(min-width: 768px) {
-            .features-grid {
-                grid-template-columns: 1fr 1fr;
-            }
         }
 
         .feature-card {
@@ -244,7 +240,6 @@
             margin-top: 15px;
         }
 
-        /* QA 區塊專屬樣式 */
         .faq-item {
             background-color: #fff;
             border: 1px solid #e0e0e0;
@@ -296,7 +291,6 @@
             border-top: 1px solid #e0e0e0;
         }
 
-        /* 結帳按鈕樣式 */
         .cta-container {
             text-align: center;
             margin-top: 40px; 
@@ -323,7 +317,6 @@
             transform: translateY(-2px);
         }
 
-        /* 聯絡資訊卡片區塊樣式 (2x2排版) */
         .contact-card {
             background: #ffffff;
             border-radius: 12px;
@@ -369,13 +362,6 @@
             text-decoration: underline;
         }
 
-        @media(max-width: 768px) {
-            .contact-grid {
-                grid-template-columns: 1fr;
-            }
-        }
-
-        /* 懸浮按鈕樣式 */
         .floating-buttons {
             position: fixed;
             bottom: 30px;
@@ -385,6 +371,7 @@
             gap: 15px;
             z-index: 9999;
         }
+        
         .float-btn {
             display: flex;
             align-items: center;
@@ -398,17 +385,96 @@
             box-shadow: 0 4px 12px rgba(0,0,0,0.2);
             transition: transform 0.2s, box-shadow 0.2s;
         }
+        
         .float-btn:hover {
             transform: translateY(-3px);
             box-shadow: 0 6px 15px rgba(0,0,0,0.3);
         }
+        
         .float-ig {
             background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
         }
+        
         .float-line {
             background-color: #00B900;
         }
+
+        /* 立即報名懸浮按鈕專屬樣式 */
+        .float-buy {
+            background-color: var(--primary);
+            box-shadow: 0 4px 15px rgba(211, 47, 47, 0.4);
+        }
+
+        footer {
+            text-align: center;
+            padding: 30px 20px 100px 20px; /* 增加底部留白，避免被三個按鈕擋住 */
+            background-color: #111;
+            color: #777;
+            font-size: 0.85rem;
+        }
+
+        /* ------------------ 手機與平板自適應 (RWD) ------------------ */
         @media(max-width: 768px) {
+            
+            header {
+                padding: 40px 15px;
+            }
+            header h1 {
+                font-size: 1.8rem; 
+            }
+            header h2 {
+                font-size: 1.15rem; 
+            }
+            .header-tags {
+                font-size: 0.9rem;
+            }
+            .header-package {
+                font-size: 1rem;
+                padding: 6px 15px;
+            }
+            .header-price {
+                font-size: 1.6rem;
+            }
+
+            .container {
+                padding: 20px 15px;
+            }
+            section {
+                padding: 25px 20px; 
+                margin-bottom: 25px;
+            }
+            h3 {
+                font-size: 1.3rem;
+                margin-bottom: 15px;
+            }
+            p {
+                font-size: 1rem; 
+            }
+
+            .content-image {
+                margin: 15px auto;
+            }
+            .video-wrapper {
+                margin: 20px 0;
+            }
+
+            .features-grid, .contact-grid {
+                grid-template-columns: 1fr;
+            }
+
+            .contact-card {
+                padding: 20px;
+            }
+            .contact-item {
+                font-size: 0.95rem;
+            }
+
+            .cta-btn {
+                font-size: 1.1rem;
+                padding: 15px 30px;
+                width: 100%;
+            }
+
             .floating-buttons {
                 bottom: 20px;
                 right: 15px;
@@ -416,16 +482,8 @@
             }
             .float-btn {
                 padding: 10px 15px;
-                font-size: 0.95rem;
+                font-size: 0.9rem;
             }
-        }
-
-        footer {
-            text-align: center;
-            padding: 30px 20px 80px 20px;
-            background-color: #111;
-            color: #777;
-            font-size: 0.85rem;
         }
     </style>
 </head>
@@ -446,6 +504,7 @@
 
     <div class="container">
         
+        <!-- 主視覺：你將獲得 -->
         <img src="hero-image.jpg" alt="你將獲得多環阻力帶與70堂線上課程" class="content-image" style="margin-top: 0;">
 
         <section>
@@ -458,6 +517,7 @@
                 而是一套可以長期使用、反覆觀看、跟著練習的身體訓練系統。
             </div>
             
+            <!-- 1分鐘搶先看：課程精華預告 -->
             <h3 style="text-align: center; border-left: none; margin-top: 20px;">🎬 1分鐘搶先看：課程精華預告</h3>
             <div class="video-wrapper">
                 <iframe src="https://www.youtube.com/embed/BsYx7_LM6a8" title="YouTube video player" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -476,6 +536,7 @@
             <p>結果阻力帶變成「看起來很實用，但實際上很少用」的工具。<br>
             <strong>RockBand Flex 多環阻力帶線上課程，幫你把這些問題一次解決。</strong></p>
             
+            <!-- RockBand Flex 是什麼？ -->
             <img src="29_0.png" alt="RockBand Flex 是什麼" class="content-image">
 
             <p>透過七大主題課程，你可以依照自己的運動習慣、生活型態與身體需求，選擇適合自己的單元練習。不管你是跑者、騎車族、游泳愛好者、孕期女性、銀髮長者，或長時間久坐的上班族，都能找到適合自己的應用方式。</p>
@@ -485,20 +546,24 @@
             <h3>RockBand Flex 不只是彈力帶，而是更好上手的多環訓練工具</h3>
             <p>一般彈力帶常見的問題是：不好抓、長度不好調、阻力不好控制、動作容易代償。</p>
             
+            <!-- 為什麼是 RockBand Flex？專利多環設計 -->
             <img src="27_0.png" alt="為什麼是 RockBand Flex" class="content-image">
 
             <p><strong>RockBand Flex 採用多環設計</strong>，讓雙手、雙腳可以快速找到固定位置，不需要打結，也不需要一直調整長度。</p>
             <p>不同環位可以對應不同身高、不同動作角度與不同訓練強度，讓阻力帶的應用更穩定，也更容易進入正確動作。</p>
             <p>無論是跑前啟動、肩膀活動、核心穩定、臀腿訓練，或是日常居家伸展，一條 RockBand Flex 都能依照你的需求變化使用。</p>
             
+            <!-- 彈力帶伸展 -->
             <img src="34_0.png" alt="RockBand Flex 彈力帶伸展" class="content-image">
 
+            <!-- 三種阻力選擇 -->
             <img src="26_0.png" alt="三種阻力選擇" class="content-image">
         </section>
 
         <section>
             <h3>課程特色</h3>
             
+            <!-- 70堂線上課程畫面預覽 -->
             <img src="course-preview.jpg" alt="不受場地限制隨時進行高效訓練" class="content-image">
             
             <div class="features-grid">
@@ -522,6 +587,7 @@
         </section>
 
         <section>
+            <!-- 重新建立動作模式 -->
             <img src="28_0.png" alt="重新建立動作模式" class="content-image" style="margin-top: 0;">
 
             <h3>七大主題課程內容</h3>
@@ -591,12 +657,14 @@
                         <p>上班族篇設計適合居家與辦公室使用的阻力帶動作，幫助改善久坐後的緊繃感，重新啟動肩胛、核心、髖部與背部肌群。</p>
                         <p><strong>適合：</strong>長時間久坐、肩頸緊繃、腰痠、活動量不足的族群。</p>
                         
+                        <!-- 適合上班族的6個動作 -->
                         <img src="37_0.png" alt="RockBand Flex 適合上班族的6個動作" class="content-image" style="margin: 20px 0 0 0; width: 100%; box-shadow: none;">
                     </div>
                 </div>
             </div>
         </section>
 
+        <!-- 模擬皮拉提斯器械 -->
         <section>
             <h3>🔥 解鎖更多可能：在家模擬皮拉提斯器械訓練概念</h3>
             <p>RockBand Flex 的多環設計，可以模擬部分 Pilates Reformer 常見的阻力方向與動作控制概念。</p>
@@ -604,6 +672,7 @@
             <img src="36_0.png" alt="RockBand Flex 模擬器械皮拉提斯動作" class="content-image" style="margin-bottom: 0;">
         </section>
 
+        <!-- 常見問題 Q&A -->
         <section>
             <h3>常見問題 Q&A</h3>
             <div class="faq-item">
@@ -650,10 +719,12 @@
             </div>
         </section>
 
+        <!-- 結帳按鈕 -->
         <div class="cta-container">
             <a href="https://www.rocktape.com.tw/SalePage/Index/11657980" class="cta-btn">立即購買實體方案並解鎖課程</a>
         </div>
 
+        <!-- 聯絡資訊卡片區塊 -->
         <div class="contact-card">
             <h3>📞 聯絡方式</h3>
             <div class="contact-grid">
@@ -678,11 +749,15 @@
 
     </div>
 
+    <!-- 懸浮按鈕：常駐於畫面右下角 -->
     <div class="floating-buttons">
         <a href="https://www.instagram.com/rocktape.tw" target="_blank" class="float-btn float-ig">📸 官方 IG</a>
         <a href="https://line.me/R/ti/p/@ahq9802k?oat_content=url&ts=12041956" target="_blank" class="float-btn float-line">💬 Line 課程諮詢</a>
+        <!-- 新增：立即報名懸浮按鈕 -->
+        <a href="https://www.rocktape.com.tw/SalePage/Index/11657980" class="float-btn float-buy">🛒 立即報名</a>
     </div>
 
+    <!-- 頁尾宣告 -->
     <footer>
         <p>&copy; 2026 詠友行銷股份有限公司 OWNLIFE MARKETING CO., LTD. All Rights Reserved.</p>
     </footer>
